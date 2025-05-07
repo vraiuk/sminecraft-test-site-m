@@ -144,6 +144,9 @@ body {
   text-align: center;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
+  min-width: 0; /* Added for flex item behavior */
+  overflow-wrap: break-word; /* Added for text wrapping */
+  white-space: normal; /* Ensure text can wrap */
 }
 
 /* Header Button Specific Backgrounds */
@@ -282,7 +285,9 @@ body {
   /* identical to box height, or 24px */
   color: #FFFFFF;
   /* Removed flex: none, order, flex-grow */
-  white-space: nowrap;
+  white-space: normal; /* MODIFIED */
+  overflow-wrap: break-word; /* ADDED */
+  word-break: break-word; /* ADDED */
 }
 
 
@@ -300,7 +305,9 @@ body {
   color: #FFFFFF;
   /* Removed flex: none, order, flex-grow */
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal; /* MODIFIED */
+  overflow-wrap: break-word; /* ADDED */
+  word-break: break-word; /* ADDED */
 }
 .v8203_59935:hover {
   opacity: 0.8;
@@ -422,63 +429,71 @@ body {
 }
 
 #hero-cta1 { /* Оставить заявку - Button 1 */
+  /* Button / 36 (hero section) */
+  /* Auto layout */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Vertical: (52-24)/2=14, Spec: 12px 24px */
   gap: 8px;
-  max-width: 342px;
-  width: auto; /* Ширина по контенту */
-  height: 44px;
-  background: #D6D2EC;
-  border: 1.5px solid #030208;
-  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
-  border-radius: 6px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  font-family: 'Lexend Deca', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: #030208;
-  text-align: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  white-space: nowrap; /* Текст не переносится внутри кнопки */
-  margin: 0 auto; /* Добавлен авто-отступ для центрирования */
-}
-
-#hero-cta2 { /* Скачать программу - Button 2 */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  gap: 8px;
-  max-width: 204px;
-  width: auto; /* Ширина по контенту */
-  height: 44px;
+  /* width: 360px; /* Removed fixed width */
+  height: 52px; /* From spec */
   background: #F2F2F2;
   border: 1.5px solid #030208;
   box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
   border-radius: 6px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  font-family: 'Lexend Deca', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
+  /* Inside auto layout */
+  /* flex: none; */
+  /* order: 0; */
+  /* align-self: stretch; */
+  /* flex-grow: 0; */
   color: #030208;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
-  white-space: nowrap; /* Текст не переносится внутри кнопки */
-  margin: 0 auto; /* Добавлен авто-отступ для центрирования */
+  min-width: 0; /* Added for flex item behavior */
+  overflow-wrap: break-word; /* Added for text wrapping */
+  white-space: normal; /* Ensure text can wrap */
+}
+
+#hero-cta2 { /* Скачать программу - Button 2 */
+  /* Button / 36 (hero section) */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px; /* Vertical: (52-24)/2=14. Spec: 12px 24px */
+  gap: 8px;
+  /* width: 222px; /* Removed fixed width */
+  height: 52px; /* From spec */
+  background: #D6D2EC;
+  border: 1.5px solid #030208;
+  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
+  border-radius: 6px;
+  /* Inside auto layout */
+  /* flex: none; */
+  /* order: 1; */
+  /* align-self: stretch; */
+  /* flex-grow: 0; */
+  color: #030208;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  min-width: 0; /* Added for flex item behavior */
+  overflow-wrap: break-word; /* Added for text wrapping */
+  white-space: normal; /* Ensure text can wrap */
 }
 
 /* Hover effects for hero buttons */
@@ -571,7 +586,7 @@ body {
   
   .v8203_60007 {
     flex: none;
-    width: 100vw;
+    width: 100%;
     max-width: none;
     height: 450px;
     order: 0;
@@ -591,16 +606,13 @@ body {
   
   .v8203_60007 img.mobile-image {
     display: block; /* Показываем мобильное изображение */
-    width: 100vw;
-    max-width: none;
+    width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
     object-fit: cover;
-    object-position: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    /* object-position: center; /* CHANGED to bottom center */
+    object-position: bottom center; /* Прижимаем видимую часть к низу */
   }
 }
 
@@ -658,7 +670,7 @@ body {
   
 .v8203_60007 {
     flex: none;
-    width: 100vw;
+    width: 100%;
     max-width: none;
     height: 300px;
     margin: 0;
@@ -742,29 +754,22 @@ body {
   align-items: flex-start; /* Align items to the top */
 }
 
-.v8203_60042 { /* Left column (Heading container) */
-  flex: 1; /* Take half of the space */
-  display: flex;
-  flex-direction: column; /* Ensure span takes full width */
+.v8203_60042, /* Left column (Heading container) */
+.v8203_60044 { /* Right column (Description container) */
+  flex: 1 1 100%; /* Колонки занимают всю ширину */
+  width: 100%;
+  max-width: 680px; /* Ограничиваем ширину текста для читаемости */
+  text-align: center; /* Центрируем текст в колонках */
 }
 
 .v8203_60043 { /* Heading text */
-  font-family: 'B612 Mono', monospace;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 1.2; /* 120% */
-  letter-spacing: -0.01em;
-  color: #030208;
-  /* width: 100%; Removed fixed width */
-}
-
-.v8203_60044 { /* Right column (Description container) */
-  flex: 1; /* Take half of the space */
-  display: flex;
-  flex-direction: column; /* Ensure span takes full width */
+  font-family: 'B612 Mono', monospace; /* ENSURED */
+  font-size: 32px; /* MODIFIED from 36px */
+  text-align: center;
 }
 
 .v8203_60045 { /* Description text */
+  font-size: 17px; /* Слегка корректируем шрифт описания */
   font-family: 'Lexend Deca', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -850,8 +855,9 @@ body {
 .v8203_60308 img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100%; /* Let container height control aspect ratio if needed, or set to auto if container has no height */
+  max-width: 100%; /* Ensure image does not exceed container */
+  object-fit: cover; /* Cover the container, maintaining aspect ratio */
   object-position: center;
   /* border-radius: inherit; /* Not needed if parent has overflow:hidden */
 }
@@ -2021,22 +2027,25 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 20px; /* Padding from spec */
-  gap: 8px; /* From spec */
-  width: 100%; /* From spec (335px adapted to 100%) */
-  height: 40px; /* From spec */
-  border: 1.5px solid #030208; /* From spec */
-  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15); /* From spec */
-  border-radius: 6px; /* From spec */
+  padding: 8px 16px; /* Adjusted padding for mobile */
+  gap: 8px;
+  /* width: 100%; /* Take full width in mobile menu */
+  height: 40px;
+  border: 1.5px solid #030208;
+  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
+  border-radius: 6px;
   font-family: 'Lexend Deca', sans-serif;
-  font-style: normal;
+  font-size: 14px; /* Slightly smaller font for mobile if needed */
   font-weight: 400;
-  font-size: 16px;
   line-height: 150%;
   color: #030208;
-  cursor: pointer;
   text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
+  min-width: 0; /* Added for flex item behavior */
+  overflow-wrap: break-word; /* Added for text wrapping */
+  white-space: normal; /* Ensure text can wrap */
 }
 
 #mobile-header-cta1 { background: #F2F2F2; /* From spec */ }
@@ -2274,23 +2283,23 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 8px 20px;
+    padding: 8px 16px; /* MODIFIED */
     gap: 8px;
-    width: 100%; /* Адаптивная ширина кнопки (было 335px) */
-    max-width: 335px; /* Ограничиваем максимальную ширину */
-    height: 40px;
-    background: #D6D2EC; /* Цвет для "Оставить заявку" */
+    width: 100%; 
+    max-width: 335px; 
+    min-height: 40px; /* MODIFIED */
+    background: #D6D2EC; 
     border: 1.5px solid #030208;
     box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
     border-radius: 6px;
     flex: none;
-    order: 1; /* Оставить заявку - вторая по Figma*/
-    align-self: center; /* Центрируем кнопку, если она не на всю ширину */
+    order: 1; 
+    align-self: center; 
     flex-grow: 0;
-    font-family: 'Lexend Deca';
+    font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
     font-style: normal;
     font-weight: 400;
-  font-size: 16px;
+  font-size: 15px; /* MODIFIED */
     line-height: 150%;
     color: #030208;
   }
@@ -2301,23 +2310,23 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 8px 20px;
+    padding: 8px 16px; /* MODIFIED */
     gap: 8px;
-    width: 100%; /* Адаптивная ширина кнопки (было 335px) */
-    max-width: 335px; /* Ограничиваем максимальную ширину */
-    height: 40px;
-    background: #F2F2F2; /* Цвет для "Скачать программу" */
+    width: 100%; 
+    max-width: 335px; 
+    min-height: 40px; /* MODIFIED */
+    background: #F2F2F2; 
     border: 1.5px solid #030208;
     box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
     border-radius: 6px;
     flex: none;
-    order: 0; /* Скачать программу - первая по Figma */
-    align-self: center; /* Центрируем кнопку, если она не на всю ширину */
+    order: 0; 
+    align-self: center; 
     flex-grow: 0;
-    font-family: 'Lexend Deca';
+    font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
     font-style: normal;
     font-weight: 400;
-  font-size: 16px;
+  font-size: 15px; /* MODIFIED */
     line-height: 150%;
     color: #030208;
   }
@@ -2365,831 +2374,26 @@ body {
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 768px) {
-  /* Для устройств между 376px и 768px */
-  .v8203_59998, .v8203_59999 {
-    width: 100%;
-    height: auto;
-    min-height: 979px;
-  }
-  
-  .v8203_60000 {
-    width: 100%;
-    padding: 32px 20px;
-  }
-  
-  .v8203_60001 {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .v8203_60002, .v8203_60003 {
-    width: 100%;
-  }
-  
-  .v8203_60004 {
-    width: 100%;
-    padding: 0px 20px;
-  }
-  
-  #hero-cta1, #hero-cta2 {
-  width: 100%;
-    max-width: 400px;
-  }
-  
-  .v8203_60007 {
-    width: 100%;
-    height: 350px;
-  }
-}
-
-/* Исправляем медиа-запрос для мобильной версии, чтобы поменять порядок кнопок */
+/* Адаптивность для блока "Что такое Minecraft-программирование?" */
 @media screen and (max-width: 768px) {
-  /* Меняем порядок кнопок для соответствия макету */
-  /* Скачать программу - должна быть сверху */
-  #hero-cta2 {
-    order: 0;
-  }
-  
-  /* Оставить заявку - должна быть снизу */
-  #hero-cta1 {
-    order: 1;
-  }
-}
-
-/* Применяем стили из Figma для блока "3 причины" в мобильной версии */
-@media screen and (max-width: 768px) {
-  /* Layout / 251 / - Основной контейнер блока "3 причины" */
-  .v8203_60095 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* По Figma */
-    padding: 64px 20px;
-    gap: 48px;
-    width: 100%; /* Адаптивная ширина, Figma указывает 375px */
-   
-    margin: 0 auto; /* Центрируем, если родитель шире */
-    height: auto; /* Адаптивная высота, Figma указывает 1870px, но это не гибко */
-    background: #F2F2F2;
-    flex: none;
-    /* order: 2; /* Естественный порядок должен быть корректным */
-    flex-grow: 0;
-    box-sizing: border-box; /* Учитываем padding в размерах */
-  }
-
-  /* Контейнер для заголовка */
-  .v8203_60096 {
-    width: 100%; /* Занимает всю доступную ширину */
-    max-width: none; /* Сбрасываем max-width от десктопной версии */
-  text-align: left;
-    padding: 0; /* Сбрасываем отступы, если они есть от десктопа */
-  }
-
-  /* Текст основного заголовка */
-  .v8203_60100 {
-    font-family: 'B612 Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px; /* Размер шрифта по Figma для мобильных */
-    line-height: 130%; /* или 42px */
-    letter-spacing: -0.01em;
-    color: #030208;
-    width: 100%; /* Занимает всю ширину */
-    /* height: 126px; /* Фиксированная высота не нужна, пусть будет по контенту */
-    /* order: 0; */
-    /* align-self: stretch; */
-    /* flex-grow: 0; */
-  }
-
-  /* Контейнер для ряда с колонками */
-  .v8203_60329 {
-  width: 100%;
-    max-width: none; /* Сбрасываем max-width от десктопной версии */
-  }
-
-  /* Сам ряд с колонками */
-  .v8203_60328 {
-    display: flex;
-    flex-direction: column; /* Колонки теперь вертикально */
-    align-items: center; /* Центрируем карточки, если они не на всю ширину */
-    gap: 40px; /* Отступ между карточками по Figma (Items) */
-  width: 100%;
-  }
-
-  /* Стили для каждой карточки (колонки) */
-  .v8203_60297, /* Карточка 1 */
-  .v8203_60302, /* Карточка 2 */
-  .v8203_60307 { /* Карточка 3 */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px; /* Отступ внутри карточки по Figma (Image + Content) */
-    width: 100%; /* Ширина карточки */
-    max-width: 335px; /* Макс. ширина карточки по Figma */
-    /* height: 495px; /* Высота по Figma, делаем auto */
-    height: auto;
-    flex: none;
-    /* order и align-self не нужны, т.к. родитель column */
-    flex-grow: 0;
-  }
-
-  /* Изображение в карточке */
-  .v8203_60298, /* Изображение 1 */
-  .v8203_60303, /* Изображение 2 */
-  .v8203_60308 { /* Изображение 3 */
-    width: 100%; /* Изображение на всю ширину карточки */
-    height: 240px; /* Высота изображения по Figma */
-    /* background-color: #ccc; /* Остается */
-  background-size: cover;
-    background-position: center;
-    border-radius: 32px; /* Остается */
-    flex: none;
-    /* order: 0; */
-    align-self: stretch;
-    flex-grow: 0;
-  }
-
-  /* Контейнер для текста под изображением в карточке */
-  .v8203_60299, /* Текст. блок 1 */
-  .v8203_60304, /* Текст. блок 2 */
-  .v8203_60309 { /* Текст. блок 3 */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 12px; /* Отступ между заголовком и текстом в карточке по Figma */
-    width: 100%; /* На всю ширину карточки */
-    /* height: 235px; /* Высота по Figma, делаем auto */
-    height: auto;
-    flex: none;
-    /* order: 1; */
-    align-self: stretch;
-    flex-grow: 0;
-  }
-
-  /* Заголовок в карточке */
-  .v8203_60300, /* Заголовок 1 */
-  .v8203_60305, /* Заголовок 2 */
-  .v8203_60310 { /* Заголовок 3 */
-    width: 100%; /* На всю ширину */
-    /* height: 105px; /* Высота по Figma, делаем auto */
-    height: auto;
-    font-family: 'B612 Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px; /* Размер шрифта по Figma */
-    line-height: 130%; /* или 31px */
-    letter-spacing: -0.01em;
-    color: #030208;
-    flex: none;
-    /* order: 0; */
-    align-self: stretch;
-    flex-grow: 0;
-  }
-
-  /* Текст в карточке */
-  .v8203_60301, /* Текст 1 */
-  .v8203_60306, /* Текст 2 */
-  .v8203_60311 { /* Текст 3 */
-    width: 100%; /* На всю ширину */
-    /* height: 118px; /* Высота по Figma, делаем auto */
-    height: auto;
-    font-family: 'Lexend Deca';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px; /* Размер шрифта по Figma */
-    line-height: 150%; /* или 24px */
-    color: #030208;
-    flex: none;
-    /* order: 1; */
-    align-self: stretch;
-    flex-grow: 0;
-  }
-
-  /* Контейнер для кнопки "Записаться" */
-  .v8203_60118 {
-    display: flex; /* Для центрирования кнопки */
-    flex-direction: column; /* Если нужно, чтобы кнопка была на новой строке */
-    align-items: center; /* Выравнивание кнопки по левому краю */
-    width: 100%;
-    max-width: none; /* Сброс */
-    padding-top: 0; /* Убираем отступ сверху, т.к. gap уже есть у родителя .v8203_60095 */
-  }
-
-  /* Кнопка "Записаться" */
-  .v8203_60118 > .name {
-    display: flex; /* Используем flex для центрирования текста внутри кнопки */
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 20px;
-    gap: 8px;
-    width: 100%; /* Ширина кнопки */
-    max-width: 335px; /* Макс. ширина кнопки по Figma */
-    height: 40px; /* Высота кнопки по Figma */
-    background: #F2F2F2;
-    border: 1.5px solid #030208;
-    box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
-    border-radius: 6px;
-    font-family: 'Lexend Deca';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #030208;
-    cursor: pointer;
-  text-align: center;
-    text-decoration: none;
-    /* order: 0; */
-    /* align-self: stretch; */ /* Не нужно, если кнопка не должна растягиваться */
-    /* flex-grow: 0; */
-  }
-}
-
-/* Промежуточный брейкпоинт для больших планшетов / маленьких ноутбуков */
-@media screen and (max-width: 1024px) { /* ... (Header styles) ... */
-
-  /* --- Секция "Что такое Minecraft-программирование?" --- */
   .v8203_60040 {
-    padding: 80px 3%; /* Уменьшаем отступы */
-  }
-  .v8203_60041 { /* Inner container with two columns */
-    flex-direction: column; /* Колонки одна под другой */
-    align-items: center; /* Центрируем контент колонок */
-    gap: 40px; /* Отступ между колонками */
-  }
-  .v8203_60042, /* Left column (Heading container) */
-  .v8203_60044 { /* Right column (Description container) */
-    flex: 1 1 100%; /* Колонки занимают всю ширину */
     width: 100%;
-    max-width: 680px; /* Ограничиваем ширину текста для читаемости */
-    text-align: center; /* Центрируем текст в колонках */
-  }
-  .v8203_60043 { /* Heading text */
-    font-size: 36px; /* Уменьшаем шрифт заголовка */
-  text-align: center;
-}
-  .v8203_60045 { /* Description text */
-    font-size: 17px; /* Слегка корректируем шрифт описания */
-    text-align: center;
-  }
-
-  /* --- Секция "3 причины" --- */
-  .v8203_60095 { /* Внешний контейнер секции */
-    padding: 80px 3%;
-    width: 100%; /* Фон на всю ширину */
-    /* Удаляем max-width и margin:0 auto если были на внешнем */
-  }
-  .v8203_60096, /* Контейнер заголовка */
-  .v8203_60329 { /* Контейнер для ряда колонок */
-    width: 100%;
-    max-width: 980px; /* Ограничиваем ширину контента */
-    margin: 0 auto; /* Центрируем контент */
-  }
-  .v8203_60100 { /* Main title text */
-    font-size: 40px; /* Уменьшаем шрифт основного заголовка */
-    font-family: 'B612 Mono', monospace;
-  }
-  .v8203_60328 { /* The row container for cards */
-    flex-wrap: wrap; /* Разрешаем перенос карточек */
-    justify-content: center; /* Центрируем карточки в ряду */
-    gap: 32px; /* Отступ между карточками */
-  }
-  .v8203_60297, /* Карточка 1 */
-  .v8203_60302, /* Карточка 2 */
-  .v8203_60307 { /* Карточка 3 */
-    /* flex: 0 1 calc(50% - 16px); */ /* << УДАЛЕНО по вашему запросу */
-    min-width: 300px; 
-    max-width: 450px; /* Оставляем max-width, если flex-basis не используется для ограничения */
-    width: 100%; /* Пусть карточка пытается занять 100% доступного места в flex-строке */
-                 /* Если flex-wrap: wrap; будет на .v8203_60328, то это поможет с переносом */
-    gap: 24px;
-    /* ... остальные стили карточек ... */
-  }
-  .v8203_60300, /* Heading in card */
-  .v8203_60305,
-  .v8203_60310 {
-    font-size: 28px;
-    font-family: 'B612 Mono', monospace;
-  }
-  .v8203_60301, /* Text in card */
-  .v8203_60306,
-  .v8203_60311 {
-  font-size: 16px;
-    font-family: 'Lexend Deca', sans-serif;
-  }
-  .v8203_60118 { /* Button container */
-    justify-content: center; /* Центрируем кнопку */
-  }
-  .v8203_60118 > .name { /* Button itself */
-     max-width: 300px; /* Ограничиваем ширину кнопки */
-  }
-
-  /* ... (other sections for 1024px) ... */
-
-  /* --- Секция "Как проходит курс?" --- */
-  .v8203_60218 { /* Внешний контейнер секции */
-    padding: 80px 3%; /* Уменьшаем общие отступы */
-    width: 100%; /* Фон на всю ширину */
-  }
-  .v8203_60219 { /* Внутренний контейнер (текст + фото) */
-    display: flex; /* Убедимся, что это flex контейнер */
-    flex-direction: column; /* Элементы в колонку */
-    align-items: center; /* Центрируем элементы */
-    gap: 48px; 
-    width: 100%; /* Занимает всю ширину родителя .v8203_60218 */
-    max-width: 680px; /* Ограничиваем максимальную ширину контента */
-    margin: 0 auto; /* Центрируем контент */
-  }
-  .v8203_60220 { /* Левый блок (текст) */
-  width: 100%;
-    max-width: 600px; 
-    text-align: center; 
-    order: 1; /* Текст первым */
-  }
-  .v8203_60225 { 
-    align-items: center; 
-  }
-  .v8203_60226 { 
-    font-size: 40px; 
-  }
-  .v8203_60227 { 
-    font-size: 17px;
-  }
-  .v8203_60228 { 
-    align-items: flex-start; 
-    max-width: 400px; 
-    margin: 0 auto; 
-  }
-  .v8203_60241 { /* Правый блок (фото) */
-    width: 100%; 
-    max-width: 600px; 
-    height: 450px; 
-    order: 2; /* Фото вторым, под текстом */
-  }
-  /* ... (остальные секции для 1024px) ... */
-}
-
-/* --- Основной мобильный брейкпоинт --- */
-@media screen and (max-width: 768px) { /* ... (другие секции) ... */
-
-  /* --- Секция "Как проходит курс?" --- */
-  .v8203_60218 { 
     padding: 64px 20px;
-    width: 100%; 
-  }
-   .v8203_60219 { /* Внутренний контейнер (текст + фото) */
-       display: flex; /* Убедимся, что это flex контейнер */
-       flex-direction: column !important; /* Гарантируем колонку */
-       align-items: center; 
-       gap: 32px; 
-       width: 100%;
-       max-width: 335px; 
-       margin: 0 auto;
-   }
-   .v8203_60220 { /* Левый блок (текст) */
-       width: 100%;
-       text-align: left; 
-       order: 1; /* Текст первым */
-   }
-   .v8203_60225 { 
-        align-items: flex-start; 
-   }
-   .v8203_60226 { 
-     font-family: 'B612 Mono', monospace;
-     font-size: 32px;
-     line-height: 1.3;
-   }
-   .v8203_60227 { 
-     font-family: 'Lexend Deca', sans-serif;
-  font-size: 16px;
-   }
-   .v8203_60228 { 
-     align-items: flex-start; 
-     width: 100%; 
-     margin: 0; 
-   }
-   .v8203_60241 { /* Правый блок (фото) */
-     width: 100%; 
-     max-width: 335px; 
-     height: 300px; 
-     border-radius: 20px; 
-     order: 2; /* Фото вторым, под текстом */
-   }
-  /* ... (остальные секции для 768px) ... */
-}
-
-/* ... (остальной CSS) ... */
-
-/* Media Query for responsiveness - Changed breakpoint to 992px */
-@media (max-width: 992px) { /* Breakpoint for showing burger menu - уменьшил с 1280px до 992px */
-  .v8203_59715 { /* Header inner content row */
-    /* Adjust container for mobile header */
-    height: 64px; /* Use mobile spec height (or adjust if needed for tablet) */
-    padding: 0px 12px 0px 20px; /* Use mobile spec padding (or adjust) */
-    justify-content: space-between; 
-    flex-wrap: nowrap; 
-  }
-
-  .v8203_59716 { 
-     gap: 0; 
-  }
-
-   .v8203_59716 > .name { /* Logo itself */
-      width: 84px; 
-      height: 36px; 
-      line-height: 36px;
-      margin-right: 0; 
-   }
-
-  .v8203_59718 { /* Desktop Nav Links container */
-    display: none !important; /* Force hide desktop links */
-  }
-
-  .v8203_59730 { /* Desktop Header buttons container */
-    display: none !important; /* Force hide desktop buttons */
-  }
-
-  .burger-menu-button {
-    display: flex !important; /* Force show burger button */
-    order: 2; 
-    position: relative; 
-    z-index: 1200; 
-  }
-}
-
-/* Update corresponding min-width query */
-@media (min-width: 1280px) { /* Breakpoint for hiding mobile menu - соответствующее изменение */
-  .mobile-menu {
-    display: none; /* Ensure mobile menu is hidden on desktop */
-  }
-  .burger-menu-button { /* Hide burger on desktop */
-     display: none !important; 
-  }
-}
-
-/* Изменяем стили для изображений в секции героя */
-.v8203_60007 img.desktop-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center; /* Центрируем изображение */
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.v8203_60007 img.mobile-image {
-  display: none; /* Скрываем мобильное изображение на десктопе */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-/* АДАПТИВНОСТЬ: ПЛАНШЕТЫ (768px - 1023px) */
-@media screen and (max-width: 1023px) {
-  .v8203_59998 {
-    overflow: visible;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
   }
   
-  .v8203_59999 {
-    flex-direction: column-reverse; /* Фото сверху, текст снизу */
-    overflow: visible;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .v8203_60000 {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-    padding: 40px 20px;
-    align-items: center;
-    text-align: center;
-    order: 1;
-    box-sizing: border-box;
-  }
-  
-  .v8203_60007 {
-    flex: none;
-    width: 100%;
-    max-width: none;
-    height: 450px;
-    order: 0;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    right: 0;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  
-  /* Переключаем изображения на мобильной версии */
-  .v8203_60007 img.desktop-image {
-    display: none; /* Скрываем десктопное изображение */
-  }
-  
-  .v8203_60007 img.mobile-image {
-    display: block; /* Показываем мобильное изображение */
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-/* Обновляем соответствующие медиа-запросы */
-@media screen and (max-width: 992px) { /* !important добавлено для принудительного переопределения - CHANGED to 992px */
-  .burger-menu-button {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    position: relative !important;
-    z-index: 1200 !important;
-  }
-  
-  /* Дополнительное усиление для скрытия десктопных элементов */
-  .v8203_59718, 
-  .v8203_59730 {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
-
-/* Update the corresponding min-width query that shows desktop items */
-@media screen and (min-width: 1280px) { /* Показываем стандартные ссылки и кнопки - CHANGED to 993px */
-  .v8203_59718, .v8203_59730 {
-    display: flex;
-  }
-  
-  /* Скрываем бургер-меню */
-  .burger-menu-button {
-    display: none !important;
-  }
-  
-  /* Скрываем мобильное меню */
-  .mobile-menu, .mobile-menu-overlay {
-    display: none !important;
-  }
-}
-
-/* ... existing code ... */
-
-/* Update other related media queries if they exist, e.g., the one controlling burger button display specifically */
-/* Find block like: @media screen and (max-width: 768px) { .burger-menu-button { display: -webkit-box !important; ... } } */
-/* And change 768px to 1024px */
-
-/* Near line ~1729 in the original full file example */
-@media screen and (max-width: 1280px) { /* !important добавлено для принудительного переопределения - CHANGED to 1280px */
-  .burger-menu-button {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    position: relative !important;
-    z-index: 1200 !important;
-  }
-  
-  /* Дополнительное усиление для скрытия десктопных элементов */
-  .v8203_59718, 
-  .v8203_59730 {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
-
-/* Update the corresponding min-width query that shows desktop items */
-@media screen and (min-width: 1281px) { /* Показываем стандартные ссылки и кнопки - CHANGED to 1281px */
-  .v8203_59718, .v8203_59730 {
-    display: flex;
-  }
-  
-  /* Скрываем бургер-меню */
-  .burger-menu-button {
-    display: none !important;
-  }
-  
-  /* Скрываем мобильное меню */
-  .mobile-menu, .mobile-menu-overlay {
-    display: none !important;
-  }
-}
-
-/* ... rest of the file ... */
-
-/* Адаптивность Hero-блока */
-
-/* Этап 1: Планшеты и небольшие десктопы - фото уходит под текст */
-@media  (max-width: 1200px) { /* << CHANGED BREAKPOINT from 1024px to 1200px */
-  .v8203_59998 {
-    min-height: auto; 
-  }
-  .v8203_59999 { 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 60px 3%; 
-    gap: 40px; 
-  }
-  .v8203_60000 { 
-    order: 1; 
-    width: 100%;
-    max-width: 700px; 
-    padding: 0px; 
-    align-items: center; 
-    text-align: center; 
-  }
-  .v8203_60001 { 
-    width: 100%; 
-    align-items: center; 
-  }
-  .v8203_60002 { 
-    font-size: 48px; 
-  }
-  .v8203_60003 { 
-    font-size: 18px;
-  }
-  .v8203_60004 { 
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-    max-width: 580px; 
-  }
-  #hero-cta2 { order: 0; } 
-  #hero-cta1 { order: 1; } 
-
-  .v8203_60007 { 
-    order: 2; 
-    width: 100%;
-    max-width: 700px; 
-    height: 450px; 
-  background-size: cover;
-  }
-}
-
-/* Этап 2: Мобильные устройства - дальнейшая адаптация */
-@media screen and (max-width: 768px) {
-  /* Стили для 768px остаются прежними, они будут уточнять стили для 1200px */
-  .v8203_59999 { 
-    padding: 40px 20px; 
-    gap: 32px; 
-  }
-  .v8203_60000 { 
-    max-width: 100%; 
-  }
-  .v8203_60002 { 
-    font-size: 36px; 
-  }
-  .v8203_60003 { 
-  font-size: 16px;
-  }
-  .v8203_60004 { 
-    flex-direction: column; 
-    align-items: center;
-    width: 100%;
-    max-width: 335px; 
-  }
-
-  .v8203_60007 { 
-    max-width: 100%; 
-    height: 300px; 
-  }
-}
-
-/* ... остальные стили ... */
-
-/* Улучшаем адаптивность первого блока с героем */
-@media screen and (max-width: 768px) {
-  .v8203_59998 {
-    width: 100%;
-    min-height: auto;
-  }
-  
-  .v8203_59999 {
-    padding: 40px 20px;
+  .v8203_60041 {
     flex-direction: column;
-  }
-  
-  .v8203_60000 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
     gap: 24px;
     width: 100%;
-  text-align: center;
-}
-  
-  .v8203_60001 {
-    align-items: center;
-    width: 100%;
-    height: auto;
-  }
-  
-  .v8203_60002, .v8203_60003 {
-    width: 100%;
-    height: auto;
-  text-align: center;
-}
-  
-  .v8203_60004 {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    gap: 16px;
-  }
-  
-  #hero-cta1, #hero-cta2 {
-    width: 100%;
-    max-width: 335px;
+    /* max-width: 335px; */ /* MODIFIED */
+    max-width: 100%; /* CHANGED to ensure it takes full available width */
     margin: 0 auto;
-    box-sizing: border-box;
   }
   
-  .v8203_60007 {
-  width: 100%;
-    height: 375px;
-  }
-  
-  .v8203_60007 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* Улучшение секции "3 причины" для мобильной версии */
-@media screen and (max-width: 768px) {
-  .v8203_60095 {
-    width: 100%;
-    padding: 64px 20px;
-  }
-  
-  .v8203_60096 {
-    width: 100%;
-  }
-  
-  .v8203_60100 {
-    width: 100%;
-    font-size: 32px;
-    line-height: 130%;
-  }
-  
-  .v8203_60329 {
-    width: 100%;
-  }
-  
-  .v8203_60328 {
-    width: 100%;
+  .v8203_60042, .v8203_60044 {
+    flex: 1; /* Take half of the space */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .v8203_60297, .v8203_60302, .v8203_60307 {
-    width: 100%;
-    max-width: 335px;
-  }
-  
-  .v8203_60298, .v8203_60303, .v8203_60308 {
-  width: 100%;
-    height: 240px;
-  }
-  
-  .v8203_60118 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-  }
-  
-  .v8203_60118 > .name {
-  width: 100%;
-    max-width: 335px;
+    flex-direction: column; /* Ensure span takes full width */
   }
 }
 
@@ -3209,138 +2413,108 @@ body {
   }
 }
 
-/* Адаптивность для блока "Что такое Minecraft-программирование?" */
+/* Фикс для блока "Что такое Minecraft-программирование?" на мобильных устройствах */
 @media screen and (max-width: 768px) {
+  .v8203_60040 .v8203_60041 { /* Используем более специфичный селектор для надежности */
+    max-width: 100%; /* Устанавливаем максимальную ширину на 100% */
+  }
+}
+
+@media screen and (max-width: 1024px) { /* ... (Header styles) ... */
+
+  /* --- Секция "Что такое Minecraft-программирование?" --- */
   .v8203_60040 {
-    width: 100%;
-    padding: 64px 20px;
+    padding: 80px 3%; /* Уменьшаем отступы */
   }
-  
-  .v8203_60041 {
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-    max-width: 335px;
-    margin: 0 auto;
+  .v8203_60041 { /* Inner container with two columns */
+    flex-direction: column; /* Колонки одна под другой */
+    align-items: center; /* Центрируем контент колонок */
+    gap: 40px; /* Отступ между колонками */
   }
-  
-  .v8203_60042, .v8203_60044 {
+  .v8203_60042, /* Left column (Heading container) */
+  .v8203_60044 { /* Right column (Description container) */
+    flex: 1 1 100%; /* Колонки занимают всю ширину */
     width: 100%;
+    max-width: 680px; /* Ограничиваем ширину текста для читаемости */
+    text-align: center; /* Центрируем текст в колонках */
+  }
+  .v8203_60043 { /* Heading text */
+    font-family: 'B612 Mono', monospace; /* ENSURED */
+    font-size: 32px; /* MODIFIED from 36px */
+  text-align: center;
+}
+  .v8203_60045 { /* Description text */
+    font-size: 17px; /* Слегка корректируем шрифт описания */
     text-align: center;
   }
-  
-  .v8203_60043 {
-    font-size: 32px;
-    line-height: 130%;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .v8203_60045 {
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    width: 100%;
+
+  /* --- Секция "3 причины" --- */
+}
+
+/* === Переопределение стилей для заголовка .v8203_60043 === */
+
+/* Базовый стиль (добавление переноса слов) */
+.v8203_60043 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Планшеты и меньше */
+@media screen and (max-width: 1024px) {
+  .v8203_60040 .v8203_60043 { /* Более специфичный селектор */
+    font-family: 'B612 Mono', monospace; /* Убедимся в шрифте */
+    font-size: 32px; /* Уменьшаем */
   }
 }
 
-/* Планшетная версия */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .v8203_60040 {
-    padding: 80px 40px;
-  }
-  
-  .v8203_60041 {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .v8203_60042, .v8203_60044 {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .v8203_60043 {
-    font-size: 36px;
-    text-align: center;
-  }
-  
-  .v8203_60045 {
-    text-align: center;
+/* Мобильные и меньше */
+@media screen and (max-width: 768px) {
+  .v8203_60040 .v8203_60043 {
+    font-family: 'B612 Mono', monospace;
+    font-size: 28px; /* Уменьшаем */
   }
 }
 
-@media screen and (max-width: 992px) { /* Скрываем стандартные ссылки и кнопки */
-  .v8203_59718, .v8203_59730 {
-    display: none !important;
-  }
-  
-  /* Показываем бургер-меню */
-  .burger-menu-button {
-    display: flex !important;
-    order: 2;
-    position: relative;
-    z-index: 1200;
-  }
-  
-  /* Стили для мобильного хедера */
-  .v8203_59715 {
-    height: 64px;
-    padding: 0px 12px 0px 20px;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-  
-  .v8203_59716 {
-    gap: 0;
-  }
-  
-  .v8203_59716 > .name {
-    width: 84px;
-    height: 36px;
-    line-height: 36px;
-    margin-right: 0;
+/* Самые маленькие экраны */
+@media screen and (max-width: 359px) {
+  .v8203_60040 .v8203_60043 {
+    font-family: 'B612 Mono', monospace;
+    font-size: 22px; /* Уменьшаем */
   }
 }
 
-@media screen and (min-width: 1280px) { /* Показываем стандартные ссылки и кнопки */
-  .v8203_59718, .v8203_59730 {
-    display: flex;
-  }
-  
-  /* Скрываем бургер-меню */
-  .burger-menu-button {
-    display: none !important;
-  }
-  
-  /* Скрываем мобильное меню */
-  .mobile-menu, .mobile-menu-overlay {
-    display: none !important;
-  }
+/* Кнопка "Записаться" */
+.v8203_60118 > .name {
+  display: flex; /* Используем flex для центрирования текста внутри кнопки */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 8px;
+  width: 100%; /* Ширина кнопки */
+  max-width: 335px; /* Макс. ширина кнопки по Figma */
+  height: 40px; /* Высота кнопки по Figma */
+  background: #F2F2F2;
+  border: 1.5px solid #030208;
+  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
+  border-radius: 6px;
+  font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #030208;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  /* order: 0; */
+  /* align-self: stretch; */ /* Не нужно, если кнопка не должна растягиваться */
+  /* flex-grow: 0; */
 }
 
-/* Стили для мобильного изображения */
-@media screen and (max-width: 1023px) {
-  .v8203_60007 img.mobile-image {
-    display: block; /* Показываем мобильное изображение */
-    width: 100%;
-    max-width: none;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    object-fit: cover;
-    object-position: center;
-    position: relative;
-    left: 0;
-    transform: none;
-  }
-  
-  .v8203_60007 {
-    width: 100%;
-    max-width: none;
+/* === Переопределение стилей для кнопки .v8203_60118 > .name === */
+@media screen and (max-width: 768px) {
+  .v8203_60095 .v8203_60118 > .name { /* Более специфичный селектор */
+    font-family: 'Lexend Deca', sans-serif;
   }
 }
-
