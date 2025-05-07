@@ -1,5 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* a {
+  text-decoration: none; // Remove underline from all links by default 
+} */
+
 * {
   box-sizing: border-box;
+  
+}
+a {
+  border: none;
+  text-decoration: none;
 }
 body {
   font-size: 14px;
@@ -14,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the .v8203_59715 container */
-  padding: 28px 0; /* (128px total height - 72px content height) / 2 - Adjust if needed */
+  
   width: 100%;
   /* min-height: 128px; /* From spec height - REMOVED for adaptability */
   background: #50A350;
@@ -301,7 +314,7 @@ body {
   font-size: 16px;
   line-height: 150%;
   /* identical to box height, or 24px */
-  text-decoration-line: underline;
+  text-decoration: underline; /* RESTORED underline */
   color: #FFFFFF;
   /* Removed flex: none, order, flex-grow */
   cursor: pointer;
@@ -322,7 +335,8 @@ body {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-  min-height: auto;
+  /* height: 900px !important; */ /* MODIFIED */
+  height: auto; /* RESTORED for responsiveness */
   background: #50A350; 
   overflow: hidden;
   box-sizing: border-box; 
@@ -337,6 +351,7 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
+  height: 100%; /* ADDED to ensure it takes full parent height */
   margin: 0;
   flex-grow: 1;
   box-sizing: border-box;
@@ -352,6 +367,7 @@ body {
   padding: 60px; /* Уменьшил отступы */
   gap: 32px;
   flex: 1;
+  height: 100%; /* ADDED to ensure it takes full parent height */
   order: 0;
   color: #FFFFFF;
   font-family: 'Lexend Deca', sans-serif;
@@ -381,7 +397,7 @@ body {
   font-family: 'B612 Mono', monospace;
   font-style: normal;
   font-weight: 400;
-  font-size: 56px;
+  font-size: 48px; /* MODIFIED from 56px */
   line-height: 120%;
   letter-spacing: -0.01em;
   color: #FFFFFF;
@@ -402,7 +418,7 @@ body {
   font-family: 'Lexend Deca', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px; /* MODIFIED from 18px */
   line-height: 150%;
   color: #FFFFFF;
   flex: none;
@@ -1000,16 +1016,17 @@ body {
 }
 
 /* Style for list item icons */
-.v8203_60937 > .name,
-.v8218_121 > .name,
-.v8218_126 > .name,
-.v8203_60945 > .name {
+.v8203_60937 > svg,
+.v8218_121 > svg,
+.v8218_126 > svg,
+.v8203_60945 > svg {
   flex-shrink: 0; /* Prevent icon from shrinking */
-  width: 16px;
-  height: 16px;
-  background-color: #030208; /* Black icon color */
-  border-radius: 50%; /* Make it a circle */
-  display: inline-block;
+  width: 16px; /* Adjusted width */
+  height: 16px; /* Adjusted height */
+  /* background-color: #030208; /* REMOVED background */
+  /* border-radius: 50%; /* REMOVED border-radius */
+  display: inline-block; /* Keep or change to block if needed */
+  vertical-align: middle; /* Align SVG vertically if needed */
 }
 
 
@@ -1239,13 +1256,16 @@ body {
 }
 
 .carousel-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #030208;
-  border-radius: 50%;
+  width: 8px !important; /* ENSURE width */
+  height: 8px !important; /* ENSURE height */
+  background-color: #030208 !important;
+  border-radius: 0 !important; /* ENSURE square shape */
   opacity: 0.2;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  padding: 0 !important; /* REMOVE any padding */
+  border: none !important; /* REMOVE any border */
+  box-sizing: border-box !important; /* Ensure width/height are final */
 }
 
 .carousel-dot.active {
@@ -1351,7 +1371,8 @@ body {
   color: #FFFFFF;
 }
 
-.cta-form input[type="text"] {
+.cta-form input[type="text"],
+.cta-form input[type="number"] /* ADDED number type */ {
   padding: 12px; /* Adjusted padding */
   height: 48px;
   background: rgba(3, 2, 8, 0.05);
@@ -1363,7 +1384,8 @@ body {
   width: 100%;
 }
 
-.cta-form input[type="text"]::placeholder {
+.cta-form input[type="text"]::placeholder,
+.cta-form input[type="number"]::placeholder /* ADDED number type */ {
   color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
 }
 
@@ -1686,6 +1708,23 @@ body {
     opacity: 0.8;
 }
 
+/* Specific styles for the 'Контакты' link to match other footer links */
+.v8203_60991 a.v8203_61136 {
+  font-family: 'Lexend Deca', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none; /* Ensure no underline */
+  transition: opacity 0.3s ease;
+}
+
+.v8203_60991 a.v8203_61136:hover {
+  opacity: 0.8;
+}
+
 /* Specific link classes - widths from Figma are likely not needed */
 .v8203_61132 { /* О курсе */ }
 .v8203_61133 { /* Отзывы */ }
@@ -1694,6 +1733,23 @@ body {
   /* Example if 'Контакты' needs different style */
   /* font-size: 14px; */
   /* font-weight: 600; /* Example: Semi Bold */
+}
+
+/* Apply original span styles to ALL footer links */
+.v8203_60991 a {
+  font-family: 'Lexend Deca', sans-serif; /* Copied from .v8203_60991 span */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none; /* Copied from .v8203_60991 span */
+  transition: opacity 0.3s ease;
+}
+
+.v8203_60991 a:hover {
+  opacity: 0.8; /* Copied from .v8203_60991 span:hover */
 }
 
 .v8203_60997 {
@@ -1771,7 +1827,7 @@ body {
   font-size: 14px;
   line-height: 150%;
   /* identical to box height, or 21px */
-  text-decoration-line: underline;
+  text-decoration: underline; /* RESTORED underline */
   color: #FFFFFF;
   cursor: pointer; /* Add pointer cursor */
   transition: opacity 0.3s ease; /* Smooth hover effect */
@@ -2355,7 +2411,7 @@ body {
   .v8203_59998, .v8203_59999 {
   width: 100%;
     height: auto;
-    min-height: 900px;
+    /* min-height: 900px; */ /* REMOVED to allow shrinking */
   }
   
   .v8203_60000, .v8203_60001, .v8203_60004 {
@@ -2517,4 +2573,63 @@ body {
   .v8203_60095 .v8203_60118 > .name { /* Более специфичный селектор */
     font-family: 'Lexend Deca', sans-serif;
   }
+}
+
+/* Desktop Hero Height */
+@media screen and (min-width: 1024px) {
+  .v8203_59998 {
+    height: 900px;
+  }
+  .v8203_59999, .v8203_60000 { /* Inner containers fill this height */
+    height: 100%;
+  }
+
+  /* Adjust "3 reasons" section for better fit on desktop */
+  .v8203_60095 { /* Main section container */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 40px; /* Reduced gap between title and columns */
+  }
+
+  .v8203_60298, /* Image placeholder 1 */
+  .v8203_60303, /* Image placeholder 2 */
+  .v8203_60308 { /* Image placeholder 3 */
+    height: 200px; /* Reduced image height */
+  }
+
+  .v8203_60297,
+  .v8203_60302,
+  .v8203_60307 { /* The three columns */
+    gap: 24px; /* Reduced gap inside columns */
+  }
+}
+
+/* === Корректировки ссылок и карусели === */
+
+/* Убираем подчеркивание у якорных ссылок в меню */
+.v8203_59718 a, /* Шапка */
+.mobile-menu-nav a, /* Мобильное меню */
+.v8203_60991 a /* Футер */ {
+    text-decoration: none !important; /* Используем !important для гарантии */
+}
+
+/* Карусель на мобильных - 1 слайд */
+@media (max-width: 767px) {
+  .carousel-slide {
+      flex: 0 0 100% !important; /* 1 слайд на мобильных, используем !important */
+      padding: 0 15px !important; /* Небольшой отступ по бокам, если нужно */
+      box-sizing: border-box !important;
+  }
+}
+
+/* Remove underline specifically from button-styled links */
+a#header-cta1,
+a#header-cta2,
+a#hero-cta1,
+a#hero-cta2,
+a#mobile-header-cta1,
+a#mobile-header-cta2,
+.v8203_60118 a.name, /* кнопка Записаться */
+.faq-cta-button.name /* кнопка Написать в FAQ */ {
+    text-decoration: none !important; /* Ensure no underline for button links */
 }
