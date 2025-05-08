@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet" />
@@ -215,7 +215,6 @@
                             </div>
                             <span class="quote v8203_60460">«Сын ждёт каждое занятие с нетерпением. Никаких скандалов с "не хочу учиться"!»</span>
                             <div class="avatar v8203_60461">
-                                <img class="avatar-img v8203_60462" src="images/avatar1.jpg" alt="Аватар Елена">
                                 <div class="avatar-content v8203_60463">
                                     <span class="avatar-name v8203_60464">Елена</span>
                                     <span class="avatar-desc v8203_60465">мама Артёма (10 лет)</span>
@@ -231,7 +230,6 @@
                             </div>
                             <span class="quote v8203_60476">«Очень понятный формат, и главное — вижу результат. Спасибо за мотивацию!»</span>
                             <div class="avatar v8203_60477">
-                                <img class="avatar-img v8203_60478" src="images/avatar2.jpg" alt="Аватар Павел">
                                 <div class="avatar-content v8203_60479">
                                     <span class="avatar-name v8203_60480">Павел</span>
                                     <span class="avatar-desc v8203_60481">отец Никиты</span>
@@ -247,7 +245,6 @@
                             </div>
                             <span class="quote v8203_60492">"I never thought my daughter would enjoy coding!"</span>
                             <div class="avatar v8203_60493">
-                                <img class="avatar-img v8203_60494" src="images/avatar3.jpg" alt="Аватар Emily Johnson">
                                 <div class="avatar-content v8203_60495">
                                     <span class="avatar-name v8203_60496">Emily Johnson</span>
                                     <span class="avatar-desc v8203_60497">Parent, Future Coder</span>
@@ -263,7 +260,6 @@
                             </div>
                             <span class="quote v8203_60508">"This course is a game changer for kids!"</span>
                             <div class="avatar v8203_60509">
-                                <img class="avatar-img v8203_60510" src="images/avatar4.jpg" alt="Аватар Michael Brown">
                                 <div class="avatar-content v8203_60511">
                                     <span class="avatar-name v8203_60512">Michael Brown</span>
                                     <span class="avatar-desc v8203_60513">Parent, Learning Enthusiast</span>
@@ -298,22 +294,22 @@
                     <label for="cta-name" class="v8223_50307">Имя</label>
                     <input type="text" id="cta-name" name="name" placeholder="Введите ваше имя" required>
                   </div>
-                
+
                   <div class="form-group v8223_50309">
                     <label for="cta-contact" class="v8223_50310">Телеграм/Вотсап/Телефон</label>
                     <input type="text" id="cta-contact" name="contact" placeholder="Введите ваш контакт" required>
                   </div>
-                
+
                   <div class="form-group v8223_50309">
                     <label for="cta-age" class="v8223_50310">Возраст ребёнка</label>
                     <input type="number" id="cta-age" name="age" placeholder="Введите возраст ребёнка" required>
                   </div>
-                
+
                   <div class="form-group checkbox-group">
                     <input type="checkbox" id="cta-consent" name="consent" required>
                     <label for="cta-consent">Я согласен(а) с условиями использования и обработки данных</label>
                   </div>
-                
+
                   <div class="form-group submit-group v8223_50330">
                     <button type="submit" class="cta-submit-button">Оставить заявку на бесплатный урок</button>
                   </div>
@@ -433,27 +429,23 @@
     <script>
       document.getElementById('cta-form').addEventListener('submit', function(e) {
         e.preventDefault()
-      
+
         const name = document.getElementById('cta-name').value
         const contact = document.getElementById('cta-contact').value
         const age = document.getElementById('cta-age').value
-      
+
         fetch('https://script.google.com/macros/s/AKfycbwKEGlIOuHrhKvqqqykh60EiMISDnXFwiifK1dd_IpL416yYInhxuP-n535S_tzSJtc/exec', {
           method: 'POST',
+          mode: 'no-cors',
           body: JSON.stringify({ name, contact, age }),
           headers: {
             'Content-Type': 'application/json'
           }
         })
-        .then(res => {
-          if (res.ok) {
+        .then(() => {
             alert('Заявка успешно отправлена!')
-            document.getElementById('cta-form').reset()
-          } else {
-            alert('Ошибка при отправке. Попробуйте позже.')
-          }
-        })
-        .catch(() => alert('Ошибка сети. Проверьте соединение.'))
+          })
+        .catch(() => alert('Что-то пошло не так. Напишите нам в вотсап.'))
       })
       </script>
 
