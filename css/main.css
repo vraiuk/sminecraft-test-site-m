@@ -3,12 +3,12 @@ html {
 }
 
 /* a {
-  text-decoration: none; // Remove underline from all links by default 
+  text-decoration: none; // Remove underline from all links by default
 } */
 
 * {
   box-sizing: border-box;
-  
+
 }
 a {
   border: none;
@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the .v8203_59715 container */
-  
+
   width: 100%;
   /* min-height: 128px; /* From spec height - REMOVED for adaptability */
   background: #50A350;
@@ -40,12 +40,15 @@ body {
   /* Content (within Navbar / 9 /) */
   display: flex;
   flex-direction: row;
+  gap: 14px;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 64px; /* Horizontal padding from spec */
+  padding: 16px 64px; /* Horizontal padding from spec */
   width: 100%;
   max-width: 1440px; /* Max width of content area */
-  height: 72px; /* From spec */
+  /* height: 72px;  */
+  /* From spec */
   box-sizing: border-box;
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
@@ -223,7 +226,7 @@ body {
   /*
   #header-cta1, #header-cta2 {
   width: 100%;
-    max-width: 300px; 
+    max-width: 300px;
   }
   */
 }
@@ -337,9 +340,9 @@ body {
   width: 100%;
   /* height: 900px !important; */ /* MODIFIED */
   height: auto; /* RESTORED for responsiveness */
-  background: #50A350; 
+  background: #50A350;
   overflow: hidden;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border: none;
   position: relative;
 }
@@ -347,7 +350,7 @@ body {
 .v8203_59999 { /* Внутренний контейнер: текст + фото */
   display: flex;
   flex-direction: row;
-  align-items: stretch; 
+  align-items: stretch;
   padding: 0;
   width: 100%;
   max-width: 100%;
@@ -522,14 +525,14 @@ body {
 }
 
 .v8203_60007 { /* Right side container (Image) */
-  min-height: unset; 
+  min-height: unset;
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
-  flex: 1.5; 
-  order: 1; 
-  border-radius: 0; 
-  position: relative; 
+  flex: 1.5;
+  order: 1;
+  border-radius: 0;
+  position: relative;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -564,7 +567,7 @@ body {
   .v8203_60000 {
     padding: 40px;
   }
-  
+
   .v8203_60002 {
     font-size: 48px;
   }
@@ -579,7 +582,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  
+
 .v8203_59999 {
     flex-direction: column-reverse; /* Фото сверху, текст снизу */
     overflow: visible;
@@ -588,7 +591,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  
+
 .v8203_60000 {
     flex: none;
     width: 100%;
@@ -599,7 +602,7 @@ body {
     order: 1;
     box-sizing: border-box;
   }
-  
+
   .v8203_60007 {
     flex: none;
     width: 100%;
@@ -614,12 +617,12 @@ body {
     overflow: hidden;
     box-sizing: border-box;
   }
-  
+
   /* Переключаем изображения на мобильной версии */
   .v8203_60007 img.desktop-image {
     display: none; /* Скрываем десктопное изображение */
   }
-  
+
   .v8203_60007 img.mobile-image {
     display: block; /* Показываем мобильное изображение */
     width: 100%;
@@ -641,7 +644,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  
+
   .v8203_59999 {
     flex-direction: column-reverse;
     overflow: visible;
@@ -650,7 +653,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  
+
   .v8203_60000 {
     padding: 40px 20px;
     align-items: center;
@@ -658,7 +661,7 @@ body {
     max-width: 100%;
     box-sizing: border-box;
   }
-  
+
 .v8203_60004 {
     flex-direction: column;
     width: 100%;
@@ -668,22 +671,22 @@ body {
     padding: 0;
     margin: 0 auto;
   }
-  
+
   #hero-cta1, #hero-cta2 {
     width: 100%;
     max-width: 335px;
     margin: 0 auto;
   }
-  
+
   /* Изменяем порядок кнопок на мобильных устройствах */
   #hero-cta2 {
     order: 0; /* Скачать программу - первая */
   }
-  
+
   #hero-cta1 {
     order: 1; /* Оставить заявку - вторая */
   }
-  
+
 .v8203_60007 {
     flex: none;
     width: 100%;
@@ -697,7 +700,7 @@ body {
     overflow: hidden;
     box-sizing: border-box;
   }
-  
+
   .v8203_60007 img.mobile-image {
     height: 100%;
   }
@@ -708,48 +711,23 @@ body {
   .v8203_60000 {
     padding: 30px 16px;
   }
-  
+
   .v8203_60002 {
     font-size: 32px;
   }
-  
+
   .v8203_60007 {
     height: 250px;
   }
-  
+
   .v8203_60007 img.mobile-image {
     height: 100%;
   }
-  
+
   #hero-cta1, #hero-cta2 {
     font-size: 14px;
     padding: 8px 16px;
   }
-}
-
-/* "Ребёнок играет в Minecraft?" Section - Header / 36 / --- END PIXEL PERFECT REPLACEMENT */
-
-/* Удаляем устаревшие и конфликтующие медиа-запросы, которые относятся к этому блоку */
-@media screen and (max-width: 768px) { /* Header / 36 / */
-  /* Удаляем дублирующие стили для .v8203_59998, .v8203_59999, .v8203_60000 и т.д. */
-}
-
-@media screen and (min-width: 376px) and (max-width: 768px) {
-  /* Удаляем дублирующие стили для планшетов */
-}
-
-@media screen and (max-width: 375px) {
-  /* Удаляем дублирующие стили для самых маленьких экранов */
-}
-
-/* Удаляем дублирующийся медиа-запрос для изменения порядка кнопок */
-@media screen and (max-width: 768px) {
-  /* Удаляем дублирующие стили для порядка кнопок */
-}
-
-/* Удаляем дублирующиеся стили для улучшения адаптивности */
-@media screen and (max-width: 768px) {
-  /* Удаляем дублирующие стили для улучшения адаптивности первого блока с героем */
 }
 
 /* "Что такое Minecraft-программирование?" section */
@@ -776,6 +754,10 @@ body {
   width: 100%;
   max-width: 680px; /* Ограничиваем ширину текста для читаемости */
   text-align: center; /* Центрируем текст в колонках */
+}
+
+.v8203_60044 {
+  text-align: start;
 }
 
 .v8203_60043 { /* Heading text */
@@ -861,7 +843,7 @@ body {
   /* background-color: #ccc; /* << REMOVED placeholder color */
   /* background-size: cover; /* Handled by img now */
   /* background-position: center; /* Handled by img now */
-  border-radius: 32px; 
+  border-radius: 32px;
   overflow: hidden; /* Ensure img respects border-radius */
 }
 
@@ -1064,25 +1046,26 @@ body {
   /* Меняем порядок блоков */
 .v8203_60219 {
     flex-direction: column;
+    gap: 0;
   }
-  
+
 .v8203_60220 {
     order: 1;
     width: 100%;
   }
-  
+
   .v8203_60241 {
     order: 2;
     width: 100%;
     height: 350px;
   }
-  
+
   /* Центрируем текст */
   .v8203_60225 {
     align-items: center;
     text-align: center;
   }
-  
+
   /* Выравнивание списка */
   .v8203_60228 {
     width: 100%;
@@ -1785,7 +1768,7 @@ body {
   gap: 24px;
   width: 100%;
   /* height: 21px; Removed fixed height */
-  flex-wrap: wrap; /* Allow wrapping */
+  flex-wrap: wrap-reverse; /* Allow wrapping */
 }
 
 .v8203_61000 {
@@ -1877,9 +1860,9 @@ body {
     position: relative !important;
     z-index: 1200 !important;
   }
-  
+
   /* Дополнительное усиление для скрытия десктопных элементов */
-  .v8203_59718, 
+  .v8203_59718,
   .v8203_59730 {
     display: none !important;
     visibility: hidden !important;
@@ -2021,10 +2004,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 24px;
   width: 100%; /* From spec (335px adapted to 100%) */
   /* height: 100px; /* Adjust height if needed */
-  margin-top: 10px; /* Add some space */
+  background-color: #067C06;
 }
 
 .mobile-menu-extra-section .v8203_59932 { /* Simulating Content */
@@ -2060,8 +2043,8 @@ body {
 }
 
 .mobile-menu-extra-section .v8203_59935 {
-   text-decoration-line: underline;
-   cursor: pointer;
+  text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .mobile-menu-actions { /* Actions */
@@ -2073,7 +2056,7 @@ body {
   gap: 16px; /* Gap from spec */
   width: 100%; /* From spec (335px adapted to 100%) */
   /* height: 96px; /* Adjust height if needed */
-  margin-top: 20px; /* Add space */
+  margin-top: 10px; /* Add space */
   box-sizing: border-box;
 }
 
@@ -2107,13 +2090,181 @@ body {
 #mobile-header-cta1 { background: #F2F2F2; /* From spec */ }
 #mobile-header-cta2 { background: #D6D2EC; /* From spec */ }
 
+/* Overlay для мобильного меню */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1200; /* Ниже меню, но выше всего остального */
+}
+
+.mobile-menu.active + .mobile-menu-overlay {
+  display: block;
+}
+
+/* Базовый стиль (добавление переноса слов) */
+.v8203_60043 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Кнопка "Записаться" */
+.v8203_60118 > .name {
+  display: flex; /* Используем flex для центрирования текста внутри кнопки */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 8px;
+  width: 100%; /* Ширина кнопки */
+  max-width: 335px; /* Макс. ширина кнопки по Figma */
+  height: 40px; /* Высота кнопки по Figma */
+  background: #F2F2F2;
+  border: 1.5px solid #030208;
+  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
+  border-radius: 6px;
+  font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #030208;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  /* order: 0; */
+  /* align-self: stretch; */ /* Не нужно, если кнопка не должна растягиваться */
+  /* flex-grow: 0; */
+}
+
+/* === Корректировки ссылок и карусели === */
+
+/* Убираем подчеркивание у якорных ссылок в меню */
+.v8203_59718 a, /* Шапка */
+.mobile-menu-nav a, /* Мобильное меню */
+.v8203_60991 a /* Футер */ {
+    text-decoration: none !important; /* Используем !important для гарантии */
+}
+
+/* Remove underline specifically from button-styled links */
+a#header-cta1,
+a#header-cta2,
+a#hero-cta1,
+a#hero-cta2,
+a#mobile-header-cta1,
+a#mobile-header-cta2,
+.v8203_60118 a.name, /* кнопка Записаться */
+.faq-cta-button.name /* кнопка Написать в FAQ */ {
+    text-decoration: none !important; /* Ensure no underline for button links */
+}
+
 
 /* Media Query for responsiveness */
+
+
+/* Desktop Hero Height */
+@media screen and (min-width: 1280px) { /* Показываем стандартные ссылки и кнопки */
+  .v8203_59718, .v8203_59730 {
+    display: flex;
+  }
+
+  /* Скрываем бургер-меню */
+  .burger-menu-button {
+    display: none !important;
+  }
+
+  /* Скрываем мобильное меню */
+  .mobile-menu, .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .v8203_59998 {
+    height: 900px;
+  }
+  .v8203_59999, .v8203_60000 { /* Inner containers fill this height */
+    height: 100%;
+  }
+
+  /* Adjust "3 reasons" section for better fit on desktop */
+  .v8203_60095 { /* Main section container */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 40px; /* Reduced gap between title and columns */
+  }
+
+  .v8203_60298, /* Image placeholder 1 */
+  .v8203_60303, /* Image placeholder 2 */
+  .v8203_60308 { /* Image placeholder 3 */
+    height: 200px; /* Reduced image height */
+  }
+
+  .v8203_60297,
+  .v8203_60302,
+  .v8203_60307 { /* The three columns */
+    gap: 24px; /* Reduced gap inside columns */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* --- Секция "Что такое Minecraft-программирование?" --- */
+
+  .v8203_60041 { /* Inner container with two columns */
+    flex-direction: column; /* Колонки одна под другой */
+    align-items: center; /* Центрируем контент колонок */
+    gap: 40px; /* Отступ между колонками */
+  }
+  .v8203_60042, /* Left column (Heading container) */
+  .v8203_60044 { /* Right column (Description container) */
+    flex: 1 1 100%; /* Колонки занимают всю ширину */
+    width: 100%;
+    max-width: 680px; /* Ограничиваем ширину текста для читаемости */
+    text-align: center; /* Центрируем текст в колонках */
+  }
+  .v8203_60043 { /* Heading text */
+    font-family: 'B612 Mono', monospace; /* ENSURED */
+    font-size: 32px; /* MODIFIED from 36px */
+  text-align: center;
+}
+  .v8203_60045 { /* Description text */
+    font-size: 17px; /* Слегка корректируем шрифт описания */
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .v8203_60040 .v8203_60043 { /* Более специфичный селектор */
+    font-family: 'B612 Mono', monospace; /* Убедимся в шрифте */
+    font-size: 32px; /* Уменьшаем */
+  }
+}
+
+/* Планшетная версия для секции "3 причины" */
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .v8203_60328 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .v8203_60297, .v8203_60302, .v8203_60307 {
+    width: calc(50% - 16px);
+    min-width: 300px;
+  }
+}
+
 @media screen and (max-width: 768px) { /* Скрываем стандартные ссылки и кнопки */
   .v8203_59718, .v8203_59730 {
     display: none !important;
   }
-  
+
   /* Показываем бургер-меню */
   .burger-menu-button {
     display: flex !important;
@@ -2121,7 +2272,7 @@ body {
     position: relative;
     z-index: 1200;
   }
-  
+
   /* Стили для мобильного хедера */
   .v8203_59715 {
     height: 64px;
@@ -2129,11 +2280,11 @@ body {
     justify-content: space-between;
     flex-wrap: nowrap;
   }
-  
+
   .v8203_59716 {
     gap: 0;
   }
-  
+
   .v8203_59716 > .name {
     width: 84px;
     height: 36px;
@@ -2145,27 +2296,44 @@ body {
   .v8203_59999 { /* Главный контейнер в секции героя */
     flex-direction: column; /* Стек вертикально на мобильных */
   }
-  
-  .v8203_60000, 
+
+  .v8203_60000,
   .v8203_60007 { /* Левая и правая колонки */
     flex: none; /* Сброс flex */
     width: 100%; /* Полная ширина */
   }
-  
+
   .v8203_60007 { /* Правая колонка с изображением */
     height: 300px; /* Фиксированная высота на мобильных */
     margin-top: 30px; /* Отступ сверху */
   }
-  
+
   .v8203_60007 .placeholder-content {
     width: 90%; /* Шире на мобильных */
     max-width: 300px; /* Максимальная ширина на мобильных */
   }
 
   /* Уменьшаем размер шрифта основного заголовка */
-  .v8203_60002 {
+  .v8203_60002,
+  .v8203_60100,
+  .v8203_60226,
+  .v8203_60448,
+  .v8203_60798 {
     font-size: 36px;
     height: auto;
+  }
+
+  .v8203_60095,
+  .v8203_60446,
+  .v8203_60717
+  {
+    padding-block: 64px;
+    gap: 48px;
+  }
+
+  .v8203_60501,
+  .v8223_50298 {
+    gap: 24px;
   }
 
   /* Адаптируем ширину контентных элементов */
@@ -2185,44 +2353,7 @@ body {
   #hero-cta1, #hero-cta2 {
     width: 100%;
   }
-}
 
-@media screen and (min-width: 1280px) { /* Показываем стандартные ссылки и кнопки */
-  .v8203_59718, .v8203_59730 {
-    display: flex;
-  }
-  
-  /* Скрываем бургер-меню */
-  .burger-menu-button {
-    display: none !important;
-  }
-  
-  /* Скрываем мобильное меню */
-  .mobile-menu, .mobile-menu-overlay {
-    display: none !important;
-  }
-}
-
-/* "Готовы начать приключение?" Section - Mega Menu 1 */
-
-/* Overlay для мобильного меню */
-.mobile-menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1200; /* Ниже меню, но выше всего остального */
-}
-
-.mobile-menu.active + .mobile-menu-overlay {
-  display: block;
-}
-
-/* Добавляем точные спецификации из Figma для мобильной версии главного блока */
-@media screen and (max-width: 768px) { /* Header / 36 / */
   .v8203_59998 {
     display: flex;
     flex-direction: column;
@@ -2244,7 +2375,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 32px;
+    /* gap: 32px; */
     width: 100%; /* Адаптивная ширина */
     height: auto; /* Адаптивная высота */
     flex: none;
@@ -2333,6 +2464,17 @@ body {
     flex-grow: 0;
   }
 
+  .v8203_59932 {
+    justify-content: flex-start;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .v8203_59933 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   /* Button 1 - Оставить заявку (была #hero-cta2 в Figma, теперь #hero-cta1) */
   #hero-cta1 {
     display: flex;
@@ -2341,16 +2483,16 @@ body {
     align-items: center;
     padding: 8px 16px; /* MODIFIED */
     gap: 8px;
-    width: 100%; 
-    max-width: 335px; 
+    width: 100%;
+    max-width: 335px;
     min-height: 40px; /* MODIFIED */
-    background: #D6D2EC; 
+    background: #D6D2EC;
     border: 1.5px solid #030208;
     box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
     border-radius: 6px;
     flex: none;
-    order: 1; 
-    align-self: center; 
+    order: 1;
+    align-self: center;
     flex-grow: 0;
     font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
     font-style: normal;
@@ -2368,21 +2510,21 @@ body {
     align-items: center;
     padding: 8px 16px; /* MODIFIED */
     gap: 8px;
-    width: 100%; 
-    max-width: 335px; 
+    width: 100%;
+    max-width: 335px;
     min-height: 40px; /* MODIFIED */
-    background: #F2F2F2; 
+    background: #F2F2F2;
     border: 1.5px solid #030208;
     box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
     border-radius: 6px;
     flex: none;
-    order: 0; 
-    align-self: center; 
+    order: 0;
+    align-self: center;
     flex-grow: 0;
     font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
     font-style: normal;
     font-weight: 400;
-  font-size: 15px; /* MODIFIED */
+    font-size: 15px; /* MODIFIED */
     line-height: 150%;
     color: #030208;
   }
@@ -2399,44 +2541,25 @@ body {
     flex-grow: 0;
     margin-top: 0; /* Убираем, если был добавлен ранее */
   }
-  
+
   .v8203_60007 .placeholder-content {
     display: none; /* Скрываем SVG заглушку, так как есть фоновое изображение */
   }
-}
 
-/* Добавляем адаптивные стили для различных размеров экрана */
-@media screen and (max-width: 375px) {
-  /* Для совсем узких экранов уменьшаем высоту блоков */
-  .v8203_59998, .v8203_59999 {
-  width: 100%;
-    height: auto;
-    /* min-height: 900px; */ /* REMOVED to allow shrinking */
-  }
-  
-  .v8203_60000, .v8203_60001, .v8203_60004 {
+  /* Адаптивность для блока "Что такое Minecraft-программирование?" */
+  .v8203_60040,
+  .v8203_60218,
+  .v8203_60446,
+  .v8203_60795
+  {
     width: 100%;
-    height: auto;
+    padding: 64px 5%;
   }
-  
-  .v8203_60002, .v8203_60003, #hero-cta1, #hero-cta2 {
-    width: 100%;
-    height: auto;
-  }
-  
-  .v8203_60007 {
-    width: 100%;
-    height: 300px;
-  }
-}
 
-/* Адаптивность для блока "Что такое Minecraft-программирование?" */
-@media screen and (max-width: 768px) {
-  .v8203_60040 {
-    width: 100%;
-    padding: 64px 20px;
+  .v8203_60796 {
+    gap: 48px;
   }
-  
+
   .v8203_60041 {
     flex-direction: column;
     gap: 24px;
@@ -2445,27 +2568,11 @@ body {
     max-width: 100%; /* CHANGED to ensure it takes full available width */
     margin: 0 auto;
   }
-  
+
   .v8203_60042, .v8203_60044 {
     flex: 1; /* Take half of the space */
     display: flex;
     flex-direction: column; /* Ensure span takes full width */
-  }
-}
-
-/* Планшетная версия для секции "3 причины" */
-@media screen and (min-width: 769px) and (max-width: 1280px) {
-  .v8203_60328 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-  }
-  
-  .v8203_60297, .v8203_60302, .v8203_60307 {
-    width: calc(50% - 16px);
-    min-width: 300px;
   }
 }
 
@@ -2474,98 +2581,11 @@ body {
   .v8203_60040 .v8203_60041 { /* Используем более специфичный селектор для надежности */
     max-width: 100%; /* Устанавливаем максимальную ширину на 100% */
   }
-}
 
-@media screen and (max-width: 1024px) { /* ... (Header styles) ... */
-
-  /* --- Секция "Что такое Minecraft-программирование?" --- */
-  .v8203_60040 {
-    padding: 80px 3%; /* Уменьшаем отступы */
-  }
-  .v8203_60041 { /* Inner container with two columns */
-    flex-direction: column; /* Колонки одна под другой */
-    align-items: center; /* Центрируем контент колонок */
-    gap: 40px; /* Отступ между колонками */
-  }
-  .v8203_60042, /* Left column (Heading container) */
-  .v8203_60044 { /* Right column (Description container) */
-    flex: 1 1 100%; /* Колонки занимают всю ширину */
-    width: 100%;
-    max-width: 680px; /* Ограничиваем ширину текста для читаемости */
-    text-align: center; /* Центрируем текст в колонках */
-  }
-  .v8203_60043 { /* Heading text */
-    font-family: 'B612 Mono', monospace; /* ENSURED */
-    font-size: 32px; /* MODIFIED from 36px */
-  text-align: center;
-}
-  .v8203_60045 { /* Description text */
-    font-size: 17px; /* Слегка корректируем шрифт описания */
-    text-align: center;
-  }
-
-  /* --- Секция "3 причины" --- */
-}
-
-/* === Переопределение стилей для заголовка .v8203_60043 === */
-
-/* Базовый стиль (добавление переноса слов) */
-.v8203_60043 {
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-/* Планшеты и меньше */
-@media screen and (max-width: 1024px) {
-  .v8203_60040 .v8203_60043 { /* Более специфичный селектор */
-    font-family: 'B612 Mono', monospace; /* Убедимся в шрифте */
+  .v8203_60040 .v8203_60043 {
+    font-family: 'B612 Mono', monospace;
     font-size: 32px; /* Уменьшаем */
   }
-}
-
-/* Мобильные и меньше */
-@media screen and (max-width: 768px) {
-  .v8203_60040 .v8203_60043 {
-    font-family: 'B612 Mono', monospace;
-    font-size: 28px; /* Уменьшаем */
-  }
-}
-
-/* Самые маленькие экраны */
-@media screen and (max-width: 359px) {
-  .v8203_60040 .v8203_60043 {
-    font-family: 'B612 Mono', monospace;
-    font-size: 22px; /* Уменьшаем */
-  }
-}
-
-/* Кнопка "Записаться" */
-.v8203_60118 > .name {
-  display: flex; /* Используем flex для центрирования текста внутри кнопки */
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 20px;
-  gap: 8px;
-  width: 100%; /* Ширина кнопки */
-  max-width: 335px; /* Макс. ширина кнопки по Figma */
-  height: 40px; /* Высота кнопки по Figma */
-  background: #F2F2F2;
-  border: 1.5px solid #030208;
-  box-shadow: 0px 2px 2px rgba(3, 2, 8, 0.15), inset 0px 4px 0px rgba(255, 255, 255, 0.2), inset 0px -5px 0px rgba(3, 2, 8, 0.15);
-  border-radius: 6px;
-  font-family: 'Lexend Deca', sans-serif; /* MODIFIED - Added fallback */
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: #030208;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  /* order: 0; */
-  /* align-self: stretch; */ /* Не нужно, если кнопка не должна растягиваться */
-  /* flex-grow: 0; */
 }
 
 /* === Переопределение стилей для кнопки .v8203_60118 > .name === */
@@ -2573,44 +2593,10 @@ body {
   .v8203_60095 .v8203_60118 > .name { /* Более специфичный селектор */
     font-family: 'Lexend Deca', sans-serif;
   }
-}
 
-/* Desktop Hero Height */
-@media screen and (min-width: 1024px) {
-  .v8203_59998 {
-    height: 900px;
+  .v8203_60222 {
+    gap: 0;
   }
-  .v8203_59999, .v8203_60000 { /* Inner containers fill this height */
-    height: 100%;
-  }
-
-  /* Adjust "3 reasons" section for better fit on desktop */
-  .v8203_60095 { /* Main section container */
-    padding-top: 60px;
-    padding-bottom: 60px;
-    gap: 40px; /* Reduced gap between title and columns */
-  }
-
-  .v8203_60298, /* Image placeholder 1 */
-  .v8203_60303, /* Image placeholder 2 */
-  .v8203_60308 { /* Image placeholder 3 */
-    height: 200px; /* Reduced image height */
-  }
-
-  .v8203_60297,
-  .v8203_60302,
-  .v8203_60307 { /* The three columns */
-    gap: 24px; /* Reduced gap inside columns */
-  }
-}
-
-/* === Корректировки ссылок и карусели === */
-
-/* Убираем подчеркивание у якорных ссылок в меню */
-.v8203_59718 a, /* Шапка */
-.mobile-menu-nav a, /* Мобильное меню */
-.v8203_60991 a /* Футер */ {
-    text-decoration: none !important; /* Используем !important для гарантии */
 }
 
 /* Карусель на мобильных - 1 слайд */
@@ -2620,16 +2606,111 @@ body {
       padding: 0 15px !important; /* Небольшой отступ по бокам, если нужно */
       box-sizing: border-box !important;
   }
+
+  .testimonial-carousel {
+    gap: 32px;
+  }
 }
 
-/* Remove underline specifically from button-styled links */
-a#header-cta1,
-a#header-cta2,
-a#hero-cta1,
-a#hero-cta2,
-a#mobile-header-cta1,
-a#mobile-header-cta2,
-.v8203_60118 a.name, /* кнопка Записаться */
-.faq-cta-button.name /* кнопка Написать в FAQ */ {
-    text-decoration: none !important; /* Ensure no underline for button links */
+/* Добавляем адаптивные стили для различных размеров экрана */
+@media screen and (max-width: 375px) {
+  /* Для совсем узких экранов уменьшаем высоту блоков */
+  .v8203_59998, .v8203_59999 {
+    width: 100%;
+    height: auto;
+    /* min-height: 900px; */ /* REMOVED to allow shrinking */
+  }
+
+  .v8203_60000, .v8203_60001, .v8203_60004 {
+    width: 100%;
+    height: auto;
+  }
+
+  .v8203_60221 {
+    gap: 24px;
+  }
+
+  .v8203_60002, .v8203_60003, #hero-cta1, #hero-cta2 {
+    width: 100%;
+    height: auto;
+    text-align: start;
+  }
+
+  .v8203_60007 {
+    width: 100%;
+    height: 300px;
+  }
+
+  .v8203_60004 {
+    padding-top: 34px;
+  }
+
+  #mobile-header-cta1,
+  #mobile-header-cta2 {
+  width: 100%;
+  }
+
+  .v8203_60045,
+  .v8203_60227 {
+    text-align: left;
+  }
+
+  .v8203_60297,
+  .v8203_60302,
+  .v8203_60307 {
+    gap: 24px;
+  }
+
+  .v8203_60300,
+  .v8203_60305,
+  .v8203_60310 {
+    font-size: 24px;
+    /* line-height: 150%;
+    letter-spacing: 0; */
+  }
+
+  .v8203_60118 {
+    padding-top: 0;
+  }
+
+  .v8203_60118 > .name {
+  padding: 10px 24px;
+  width: fit-content;
+  }
+
+  .v8203_60044 {
+    text-align: start;
+  }
+
+  /* footer */
+
+  .v8203_60987 {
+  padding: 48px 5%;
+  gap: 48px;
+  }
+
+  .v8203_60991 {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .v8203_60997 {
+    gap: 24px;
+  }
+
+  .v8203_60999 {
+    gap: 32px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+/* Самые маленькие экраны */
+@media screen and (max-width: 365px) {
+  .cta-submit-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
